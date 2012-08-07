@@ -1,0 +1,134 @@
+<!HTML>
+<html>
+	<head>
+		<title>Dejection Game Canvas Test</title>
+
+		<script type="text/javascript" charset="utf-8" src="jquery-1.7.2.min.js"></script>
+		
+		<script type="text/javascript" charset="utf-8" src="../../dejection-lib/core/base.js"></script>
+		<script type="text/javascript" charset="utf-8" src="../../dejection-lib/core/dejection.js"></script>
+
+		<script type="text/javascript" charset="utf-8" src="../../dejection-lib/env/env.js"></script>
+		<script type="text/javascript" charset="utf-8" src="../../dejection-lib/env/browser.js"></script>
+
+		<script type="text/javascript" charset="utf-8" src="../../dejection-lib/physics/physics.js"></script>
+		<script type="text/javascript" charset="utf-8" src="../../dejection-lib/physics/earth.js"></script>
+
+		<script type="text/javascript" charset="utf-8" src="../../dejection-lib/agonists/agonist.js"></script>
+		<script type="text/javascript" charset="utf-8" src="../../dejection-lib/agonists/human.js"></script>
+		<script type="text/javascript" charset="utf-8" src="../../dejection-lib/agonists/giant.js"></script>
+		<script type="text/javascript" charset="utf-8" src="../../dejection-lib/agonists/rock.js"></script>
+		<script type="text/javascript" charset="utf-8" src="../../dejection-lib/agonists/asteroid.js"></script>
+
+		<script type="text/javascript" charset="utf-8" src="../../dejection-lib/renderers/renderer.js"></script>
+		<script type="text/javascript" charset="utf-8" src="../../dejection-lib/renderers/browser_canvas.js"></script>
+
+		<script type="text/javascript" charset="utf-8" src="../../dejection-lib/scenery/scenery.js"></script>
+		<script type="text/javascript" charset="utf-8" src="../../dejection-lib/scenery/ants.js"></script>
+		<script type="text/javascript" charset="utf-8" src="../../dejection-lib/scenery/lines1.js"></script>
+		<script type="text/javascript" charset="utf-8" src="../../dejection-lib/scenery/lines2.js"></script>
+		<script type="text/javascript" charset="utf-8" src="../../dejection-lib/scenery/lines3.js"></script>
+		<script type="text/javascript" charset="utf-8" src="../../dejection-lib/scenery/testing.js"></script>
+
+		<script type="text/javascript" charset="utf-8" src="test.js"></script>
+		
+
+
+		<style type="text/css" media="screen">
+			* {
+				padding: 0;
+				margin: 0;
+				
+				font-family: Arial, sans-serif;
+				font-size: 11px;
+			}
+
+			ul {
+				/*padding-left: 15px;*/
+				list-style: none;
+			}
+
+			body {
+				background-color: #000;
+				padding: 10px 0 0 0;
+			}
+
+			#fw {
+				width: 686px;
+				margin: 0 auto;
+				border: 1px solid #EEE;
+				background-color: #FFF;
+			}
+
+			#controls {
+				float: right;
+				width: 80px;
+				border-left: 1px solid #EEE;
+				border-bottom: 1px solid #EEE;
+				padding: 2px;
+			}
+			#canvasArea {
+				width: 600px;
+			}
+			ul.list {
+				margin: 0 0 2px 0;
+			}
+			ul.list li {
+				border-top: 1px solid #EEE;
+				padding: 2px 0;
+			}
+			ul.list li:first-child {
+				border-top: none;
+			}
+
+			ul.buttonList {}
+			button {
+				width: 78px;
+				padding: 2px;
+				border: 1px solid #000;
+				background-color: #FFF;
+			}
+
+			ul.list select {
+				width: 78px;
+			}
+		</style>
+	</head>
+	<body>
+
+		<div id="fw">
+			<form id="controls" onsubmit="return false;">
+				<ul class="list">
+					<li><input type="radio" name="agonistName" value="rock" id="agonistName_rock"> <label for="agonistName_rock">Rock</label></li>
+					<li><input type="radio" name="agonistName" value="asteroid" id="agonistName_asteroid"> <label for="agonistName_asteroid">Asteroid</label></li>
+					<li><input type="radio" name="agonistName" value="human" id="agonistName_human" checked="checked"> <label for="agonistName_human">Human</label></li>
+					<li><input type="radio" name="agonistName" value="giant" id="agonistName_giant"> <label for="agonistName_giant">Giant</label></li>
+					<li><select name="scenery" id="scenery">
+						<option value="lines3">lines3</option>
+						<option value="testing">testing</option>
+						<option value="lines2">lines2</option>
+						<option value="lines2">lines1</option>
+						<option value="ants">ants</option>
+					</select></li>
+					<li><input type="checkbox" value="1" name="randomAgonists" id="randomAgonists"> <label for="randomAgonists">rdm agonists</label></li>
+					<!-- <li><button class="addMultipleAgonists" data-count="1">Add 1</button></li> -->
+					<!-- <li><button class="addMultipleAgonists" data-count="10">Add 10</button></li> -->
+					<!-- <li><button class="addMultipleAgonists" data-count="100">Add 100</button></li> -->
+					<!-- <li><button class="addMultipleAgonists" data-count="1000">Add 1000</button></li> -->
+					<li><button id="start">Start</button></li>
+					<li><button id="stop">Stop</button></li>
+					<li><button id="restart">Restart</button></li>
+					<!-- <li><button id="killAll">kill all agonists</button></li> -->
+					<li><span id="agonistCount">#</span> current agonists</li>
+					<!-- <li><span id="totalAgonistCount">#</span> lifetime agonists</li> -->
+					<!-- <li>step # <span id="stepCounter">#</span></li> -->
+					<!-- <li>render # <span id="renderCounter">#</span></li> -->
+					<li><span id="stepTime">#</span> ms step</li>
+					<li><span id="renderTime">#</span> ms render</li>
+				</ul>
+			</form>
+			<div id="canvasArea"></div>
+		</div>
+
+	</body>
+</html>
