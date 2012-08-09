@@ -47,6 +47,7 @@ $(document).ready(function() {
 			renderCount++;
 			$('#renderCounter').text(renderCount);
 			$('#renderTime').text(renderEnd-renderStart);
+			$('#changeCacheSize').text(d.renderer.changeCache.length);
 		}
 	};
 
@@ -82,6 +83,10 @@ $(document).ready(function() {
 		eval('d.config.scenery = scenery_'+$('#scenery').val());
 		d.scenery = d.config.scenery(d);
 		d.restart();
+	});
+
+	$('#redraw').click(function(){
+		d.renderer.addToChangeCache(0, 0, d.config.width, d.config.height);
 	});
 
 	$('.addMultipleAgonists').click(function(){
