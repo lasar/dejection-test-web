@@ -10,7 +10,7 @@ $(document).ready(function() {
 			debug: true,
 			container: '#canvasArea',
 		},
-		scenery: scenery_lines3,
+		scenery: scenery_despair,
 		agonists: {
 			rock: agonist_rock,
 			asteroid: agonist_asteroid,
