@@ -10,7 +10,7 @@ $(document).ready(function() {
 			debug: true,
 			container: '#canvasArea',
 		},
-		scenery: scenery_lines1,
+		scenery: scenery_lines3,
 		agonists: {
 			rock: agonist_rock,
 			asteroid: agonist_asteroid,
@@ -19,9 +19,9 @@ $(document).ready(function() {
 		},
 		randomAgonists: {
 			human: 10,
-			giant: .5,
+			// giant: .5,
 			rock: 3,
-			asteroid: .1,
+			// asteroid: .1,
 		},
 		physics: physics_earth,
 		preStep: function() {
