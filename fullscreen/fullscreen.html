@@ -45,18 +45,43 @@
 				padding: 0;
 			}
 
-			#fw {
-				width: 1000px;
-				margin: 0 auto;
-			}
-
 			#canvasArea {
+			}
+			
+			#controls {
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				height: 30px;
+				margin: 0;
+				padding: 0;
+			}
+			
+			#controls li {
+				float: left;
+				display: block;
+				height: 30px;
+				line-height: 30px;
+				width: 90px;
+				background-color: #EEE;
+				margin: 0;
+				padding: 0;
 			}
 		</style>
 	</head>
 	<body>
 
 		<div id="canvasArea"></div>
+
+		<ul id="controls">
+			<li><span id="agonistCount">#</span> current agonists</li>
+			<!-- <li><span id="totalAgonistCount">#</span> lifetime agonists</li> -->
+			<!-- <li>step # <span id="stepCounter">#</span></li> -->
+			<!-- <li>render # <span id="renderCounter">#</span></li> -->
+			<li><span id="stepTime">#</span> ms step</li>
+			<li><span id="renderTime">#</span> ms render</li>
+			<li><span id="changeCacheSize">#</span> ccs</li>
+		</ul>
 
 	</body>
 </html>

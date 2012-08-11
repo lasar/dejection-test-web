@@ -30,10 +30,10 @@ $(document).ready(function() {
 		postStep: function() {
 			stepEnd = +new Date();
 			stepCount++;
-			$('#agonistCount').text(d.agonistIndex+'/'+d.agonistCount);
+			$('#agonistCount').text(d.agonistCount);
+			$('#totalAgonistCount').text(d.agonistIndex);
 			$('#stepCounter').text(stepCount);
 			$('#stepTime').text(stepEnd-stepStart);
-			$('#counterDiff').text(stepCount/renderCount);
 		},
 		preRender: function() {
 			renderStart = +new Date();
@@ -43,7 +43,7 @@ $(document).ready(function() {
 			renderCount++;
 			$('#renderCounter').text(renderCount);
 			$('#renderTime').text(renderEnd-renderStart);
-			$('#counterDiff').text(stepCount/renderCount);
+			$('#changeCacheSize').text(d.renderer.changeCache.length);
 		}
 	};
 
