@@ -64,8 +64,8 @@ $(document).ready(function() {
 	$(d.renderer.canvas).click(function(e){
 		var name = $('input[name=agonistName]:checked').val();
 		d.addAgonist(name, {
-			x: e.offsetX,
-			y: e.offsetY
+			x: e.offsetX-8,
+			y: e.offsetY-8
 		});
 		return false;
 	});
