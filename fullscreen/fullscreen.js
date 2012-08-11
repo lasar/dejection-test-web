@@ -23,7 +23,6 @@ $(document).ready(function() {
 			rock: 3,
 			// asteroid: .1,
 		},
-		physics: physics_earth,
 		preStep: function() {
 			stepStart = +new Date();
 		},
