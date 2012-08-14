@@ -16,9 +16,10 @@ $(document).ready(function() {
 		},
 		scenery: dejectionScenery,
 		agonists: {
-			rock: agonist_rock,
-			asteroid: agonist_asteroid,
 			human: agonist_human,
+			rock: agonist_rock,
+			dynamite: agonist_dynamite,
+			asteroid: agonist_asteroid,
 			giant: agonist_giant,
 		},
 		randomAgonists: {
@@ -34,6 +35,7 @@ $(document).ready(function() {
 			stepEnd = +new Date();
 			stepCount++;
 			$('#agonistCount').text(d.agonistCount);
+			$('#deathCount').text(d.deathCount);
 			$('#totalAgonistCount').text(d.agonistIndex);
 			$('#stepCounter').text(stepCount);
 			$('#stepTime').text(stepEnd-stepStart);
