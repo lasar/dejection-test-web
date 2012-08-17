@@ -48,7 +48,7 @@ $(document).ready(function() {
 			renderCount++;
 			$('#renderCounter').text(renderCount);
 			$('#renderTime').text(renderEnd-renderStart);
-			$('#changeCacheSize').text(d.renderer.changeCache.length);
+			$('#changeCacheSize').text(d.renderer.changeCacheSize);
 		}
 	};
 
