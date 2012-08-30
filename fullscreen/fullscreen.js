@@ -10,7 +10,7 @@ $(document).ready(function() {
 			debug: true,
 			container: '#canvasArea',
 		},
-		scenery: scenery_despair,
+		scenery: scenery_despair_greenery,
 		agonists: {
 			rock: agonist_rock,
 			asteroid: agonist_asteroid,
@@ -58,7 +58,7 @@ $(document).ready(function() {
 	d.run();
 
 	$(d.renderer.canvas).click(function(e){
-		var name = $('input[name=agonistName]:checked').val();
+		var name = 'rock';
 		d.addAgonist(name, {
 			x: e.offsetX,
 			y: e.offsetY
